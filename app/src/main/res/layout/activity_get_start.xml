@@ -68,6 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_below="@+id/ivCircleIndicator"
+            android:elevation="@dimen/margin_small"
             android:layout_marginHorizontal="@dimen/margin_medium_3"
             android:layout_marginVertical="@dimen/margin_medium_3"
             android:background="@drawable/bg_btn_get_start">
