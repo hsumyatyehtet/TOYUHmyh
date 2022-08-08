@@ -14,6 +14,14 @@ class GetStartActivity: BaseActivity() {
 
         binding = ActivityGetStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setUpListener()
+    }
+
+    private fun setUpListener() {
+        binding.rlGetStarted.setOnClickListener {
+            startActivity(MainActivity.newIntent(this))
+        }
     }
 
     companion object{

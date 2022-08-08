@@ -10,13 +10,13 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-40dp"
+            android:layout_marginTop="-20dp"
             android:background="@mipmap/bg_get_start" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="-44dp"
+            android:layout_marginStart="-40dp"
             android:layout_marginTop="-30dp"
             android:src="@mipmap/bg_second_get_start" />
 
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_medium_2"
-            android:layout_marginTop="@dimen/margin_80"
+            android:layout_marginTop="@dimen/margin_100"
             android:src="@mipmap/toy_robot_get_start" />
 
         <TextView
@@ -60,25 +60,25 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvToyDescc"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/margin_50"
+            android:layout_marginTop="@dimen/margin_70"
             android:src="@mipmap/circle_indicator" />
 
         <RelativeLayout
             android:id="@+id/rlGetStarted"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
             android:layout_below="@+id/ivCircleIndicator"
-            android:background="@drawable/bg_btn_get_start"
-            android:layout_marginVertical="@dimen/margin_medium_2"
-            android:layout_marginHorizontal="@dimen/margin_medium_3">
+            android:layout_marginHorizontal="@dimen/margin_medium_3"
+            android:layout_marginVertical="@dimen/margin_medium_3"
+            android:background="@drawable/bg_btn_get_start">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:text="Get Started"
-                android:textSize="@dimen/text_regular_2x"
                 android:textColor="@color/white"
-                android:layout_centerInParent="true"/>
+                android:textSize="@dimen/text_regular_2x" />
 
         </RelativeLayout>
 
