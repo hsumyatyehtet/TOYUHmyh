@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/margin_250"
+    android:layout_height="@dimen/margin_200">
+
+    <ImageView
+        android:id="@+id/ivToyPromotionItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/toy_promotion_squid_game" />
+
+</RelativeLayout>

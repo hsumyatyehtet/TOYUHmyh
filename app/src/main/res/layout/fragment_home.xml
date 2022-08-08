@@ -3,10 +3,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/rlToolbarHome"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_120"
+        android:background="@drawable/bg_home_noti">
+
+        <ImageView
+            android:id="@+id/ivMenuHome"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:src="@drawable/menu_home" />
+
+        <ImageView
+            android:id="@+id/ivToyuHome"
+            android:layout_width="@dimen/margin_90"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_toEndOf="@+id/ivMenuHome"
+            android:src="@drawable/toy_u_home" />
+
+        <ImageView
+            android:id="@+id/ivNotiHome"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:src="@drawable/noti_home" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvToyPromotion"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home"
-        android:layout_centerInParent="true"/>
+        android:layout_below="@+id/rlToolbarHome"
+        android:elevation="@dimen/margin_small"
+        android:layout_marginTop="-60dp"/>
 
 </RelativeLayout>
