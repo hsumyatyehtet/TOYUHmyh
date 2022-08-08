@@ -9,6 +9,13 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorPrimary">#FE8700</color>
+    <color name="mainColor2">#3A445A</color>
+    <color name="mainColor3">#95A4C8</color>
+    <color name="mainColor4">#BDBDBD</color>
+    <color name="accentColor1">#4AB426</color>
+    <color name="accentColor2">#9AD6FF</color>
+    <color name="accentColor3">#FFE016</color>
+    <color name="accentColor4">#FF829B</color>
 
     <color name="colorPrimaryText">#212121</color>
     <color name="colorSecondaryText">#757575</color>
