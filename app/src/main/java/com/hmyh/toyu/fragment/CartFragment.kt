@@ -23,6 +23,8 @@ class CartFragment : BaseFragment() {
 
     private lateinit var mAdapter: ToyCartAdapter
 
+    private var mTotalPrice: Double = 0.0
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -56,7 +58,19 @@ class CartFragment : BaseFragment() {
     private fun setUpDataObservation() {
         viewModel.getToyCartListData().observe(viewLifecycleOwner, Observer {
             it?.let { toyCartList ->
+
+                mTotalPrice = 0.0
+
+                toyCartList.forEach { toyCart ->
+
+                    var tempPrice = toyCart.price!! * toyCart.toyQtyCount
+                    mTotalPrice = mTotalPrice?.plus(tempPrice)!!
+
+                }
+
                 mAdapter.setNewData(toyCartList as MutableList<ToyCartVO>)
+
+                binding.tvTotalPrice.text = "You need to pay $${mTotalPrice}"
             }
         })
     }
