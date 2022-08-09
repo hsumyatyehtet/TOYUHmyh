@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
 
-    <TextView
-        android:layout_width="wrap_content"
+   <RelativeLayout
+       android:id="@+id/rlToolbarCart"
+       android:layout_width="match_parent"
+       android:layout_height="48dp">
+
+       <ImageView
+           android:id="@+id/ivMenuCart"
+           android:layout_width="35dp"
+           android:layout_height="35dp"
+           android:layout_marginStart="@dimen/margin_medium_2"
+           android:layout_marginTop="@dimen/margin_medium_2"
+           android:src="@drawable/menu_cart" />
+
+       <ImageView
+           android:id="@+id/ivToyuCart"
+           android:layout_width="@dimen/margin_90"
+           android:layout_height="35dp"
+           android:layout_marginTop="@dimen/margin_medium_2"
+           android:layout_toEndOf="@+id/ivMenuCart"
+           android:src="@drawable/toyu_grey" />
+
+       <ImageView
+           android:id="@+id/ivNotiCart"
+           android:layout_width="35dp"
+           android:layout_height="35dp"
+           android:layout_alignParentEnd="true"
+           android:layout_marginTop="@dimen/margin_medium_2"
+           android:layout_marginEnd="@dimen/margin_medium_2"
+           android:src="@drawable/noti_cart" />
+
+   </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCart"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cart"
-        android:layout_centerInParent="true"/>
+        android:layout_below="@+id/rlToolbarCart"
+        android:layout_marginTop="@dimen/margin_medium_2"/>
 
 </RelativeLayout>

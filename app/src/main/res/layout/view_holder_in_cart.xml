@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_medium_2"
+    android:background="#FAFAFA">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvImage"
+        android:layout_width="@dimen/margin_150"
+        android:layout_height="@dimen/margin_170"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/margin_medium_3"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        app:cardElevation="@dimen/margin_medium">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivChecked"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:elevation="2dp"
+                android:src="@drawable/ic_check_true" />
+
+            <ImageView
+                android:id="@+id/ivImageCart"
+                android:layout_width="@dimen/margin_90"
+                android:layout_height="@dimen/margin_90"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:src="@drawable/toy_arrowplain" />
+
+            <TextView
+                android:id="@+id/tvToyNameCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_card_medium_2"
+                android:text="Controller"
+                android:textColor="@color/mainColor2"
+                android:textSize="@dimen/text_regular" />
+
+            <TextView
+                android:id="@+id/tvToyTypeCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tvToyNameCart"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:text="Controller"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_small" />
+
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        android:id="@+id/rlOwnerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/tvToyItemRemain"
+        android:layout_marginBottom="@dimen/margin_small">
+
+        <ImageView
+            android:id="@+id/ivOwnerCart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toStartOf="@+id/llNameContainer"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:src="@drawable/owner_thomas" />
+
+        <LinearLayout
+            android:id="@+id/llNameContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:layout_alignParentEnd="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OWNER BY"
+                android:textColor="@color/mainColor3"
+                android:layout_gravity="end"
+                android:textSize="@dimen/text_regular" />
+
+            <TextView
+                android:id="@+id/tvOwnerNameCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thomas"
+                android:layout_gravity="end"
+                android:textColor="@color/mainColor2"
+                android:textSize="@dimen/text_regular_2x" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvToyItemRemain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvToyPriceCart"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:text="2 items left"
+        android:textColor="@color/mainColor3"
+        android:textSize="@dimen/text_smaller"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvToyPriceCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/llCounter"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:text="$75.00"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_regular_2x"
+        android:layout_marginBottom="@dimen/margin_medium"/>
+
+    <LinearLayout
+        android:id="@+id/llCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cvImage"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="@drawable/count_rect"
+            android:elevation="4dp">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_count_desc" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvToyCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            android:text="1"
+            android:textColor="@color/mainColor2"
+            android:textSize="@dimen/text_regular" />
+
+        <RelativeLayout
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="@drawable/count_rect"
+            android:elevation="4dp">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_count_acc" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D8D8D8"
+        android:layout_below="@id/cvImage"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginStart="@dimen/margin_medium_2"/>
+
+</RelativeLayout>
