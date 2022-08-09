@@ -21,11 +21,14 @@ data class ToyDetailVO(
     @ColumnInfo(name = "image")
     var image: Int? = null,
 
+    @ColumnInfo(name = "qty")
+    var qty: Int? = null,
+
     @ColumnInfo(name = "price")
     var price: Double? = null,
 
     @ColumnInfo(name = "rating")
-    var rating: Float? = null,
+    var rating: Double? = null,
 
     @ColumnInfo(name = "description")
     var description: String? = null,
@@ -34,9 +37,6 @@ data class ToyDetailVO(
     var availableColorList: List<ColorsListVO>? = null,
 
     @Embedded(prefix = "owner_")
-    var owner: OwnerVO? = null,
-
-    @ColumnInfo(name = "qty")
-    var qty: Int? = null
+    var owner: OwnerVO? = null
 
 )
