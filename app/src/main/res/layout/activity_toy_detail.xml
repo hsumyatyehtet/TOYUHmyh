@@ -154,11 +154,11 @@
                 <View
                     android:id="@+id/viewColor"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="0.5dp"
                     android:layout_below="@+id/tvToyDescDetail"
                     android:layout_marginHorizontal="@dimen/margin_medium_2"
                     android:layout_marginTop="@dimen/margin_medium_2"
-                    android:background="@color/colorDivider" />
+                    android:background="#D8D8D8" />
 
                 <TextView
                     android:id="@+id/tvAvailableColor"
@@ -166,7 +166,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/viewColor"
                     android:layout_marginStart="@dimen/margin_medium_2"
-                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium_3"
                     android:text="Available Colors"
                     android:textColor="@color/mainColor2"
                     android:textSize="@dimen/text_regular_2x" />
@@ -182,19 +182,19 @@
                 <View
                     android:id="@+id/viewOwner"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="0.5dp"
                     android:layout_below="@+id/rvAvailableColor"
                     android:layout_marginHorizontal="@dimen/margin_medium_2"
-                    android:layout_marginTop="@dimen/margin_medium_2"
-                    android:background="@color/colorDivider" />
+                    android:layout_marginTop="@dimen/margin_medium_3"
+                    android:background="#D8D8D8" />
 
                 <RelativeLayout
                     android:id="@+id/rlOwnerContainer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/viewOwner"
-                    android:layout_marginVertical="@dimen/margin_medium_2"
-                    android:layout_marginHorizontal="@dimen/margin_medium_2">
+                    android:layout_marginHorizontal="@dimen/margin_medium_2"
+                    android:layout_marginVertical="@dimen/margin_medium_3">
 
                     <ImageView
                         android:id="@+id/ivOwner"
@@ -205,10 +205,10 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@+id/ivOwner"
+                        android:layout_centerVertical="true"
                         android:layout_marginStart="@dimen/margin_medium_2"
-                        android:orientation="vertical"
-                        android:layout_centerVertical="true">
+                        android:layout_toEndOf="@+id/ivOwner"
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -218,6 +218,7 @@
                             android:textSize="@dimen/text_regular" />
 
                         <TextView
+                            android:id="@+id/tvOwnerName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Thomas"

@@ -8,6 +8,7 @@ import androidx.room.TypeConverters
 import com.hmyh.toyu.data.vos.*
 import com.hmyh.toyu.persistance.daos.ToyDao
 import com.hmyh.toyu.persistance.daos.ToyPromotionDao
+import com.hmyh.toyu.persistance.daos.ToysDetailDao
 import com.hmyh.toyu.persistance.typeconverter.ColorsListTypeConverter
 
 @Database(
@@ -25,6 +26,7 @@ abstract class ToyUDatabase : RoomDatabase() {
 
     abstract fun toyDao(): ToyDao
     abstract fun toyPromotionDao(): ToyPromotionDao
+    abstract fun toysDetailDao(): ToysDetailDao
 
     companion object {
 

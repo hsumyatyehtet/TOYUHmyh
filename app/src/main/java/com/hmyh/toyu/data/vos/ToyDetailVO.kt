@@ -28,7 +28,7 @@ data class ToyDetailVO(
     var price: Double? = null,
 
     @ColumnInfo(name = "rating")
-    var rating: Double? = null,
+    var rating: Float? = null,
 
     @ColumnInfo(name = "description")
     var description: String? = null,

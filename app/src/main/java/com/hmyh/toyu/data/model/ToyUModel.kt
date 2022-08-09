@@ -1,8 +1,10 @@
 package com.hmyh.toyu.data.model
 
 import androidx.lifecycle.LiveData
+import com.hmyh.toyu.data.vos.ToyDetailVO
 import com.hmyh.toyu.data.vos.ToyListVO
 import com.hmyh.toyu.data.vos.ToyPromotionListVO
+import com.hmyh.toyu.persistance.daos.ToysDetailDao
 
 interface ToyUModel {
 
@@ -11,5 +13,8 @@ interface ToyUModel {
 
     fun insertToyPromotionList(toyPromotionList: List<ToyPromotionListVO>)
     fun getToyPromotionList(): LiveData<List<ToyPromotionListVO>>
+
+    fun insertToysDetail(toyDetailList: List<ToyDetailVO>)
+    fun getToysDetailByToyId(toysId: Int): LiveData<ToyDetailVO>
 
 }
