@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/margin_medium_2"
-    android:background="#FAFAFA">
+    android:background="#f4f4f4">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvImage"
@@ -13,6 +13,7 @@
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/margin_medium_3"
         android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_small"
         app:cardElevation="@dimen/margin_medium">
 
         <RelativeLayout
@@ -93,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="OWNER BY"
-                android:textColor="@color/mainColor3"
+                android:textColor="@color/mainColor2"
                 android:layout_gravity="end"
                 android:textSize="@dimen/text_regular" />
 
@@ -142,14 +143,16 @@
         android:layout_alignBottom="@+id/cvImage"
         android:layout_marginEnd="@dimen/margin_medium_2"
         android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/margin_small"
         android:orientation="horizontal">
 
         <RelativeLayout
             android:id="@+id/rlDesc"
             android:layout_width="38dp"
             android:layout_height="38dp"
-            android:background="@drawable/count_rect"
-            android:elevation="4dp">
+            android:layout_margin="@dimen/margin_medium"
+            android:elevation="@dimen/margin_large"
+            android:background="@drawable/count_rect">
 
             <ImageView
                 android:layout_width="12dp"
@@ -164,7 +167,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="@dimen/margin_medium"
             android:text="1"
             android:textColor="@color/mainColor2"
             android:textSize="@dimen/text_regular" />
@@ -173,8 +175,9 @@
             android:id="@+id/rlIncrease"
             android:layout_width="38dp"
             android:layout_height="38dp"
-            android:background="@drawable/count_rect"
-            android:elevation="4dp">
+            android:elevation="@dimen/margin_large"
+            android:layout_margin="@dimen/margin_medium"
+            android:background="@drawable/count_rect">
 
             <ImageView
                 android:layout_width="12dp"
