@@ -18,8 +18,9 @@ interface ToyUModel {
     fun insertToysDetail(toyDetailList: List<ToyDetailVO>)
     fun getToysDetailByToyId(toysId: Int): LiveData<ToyDetailVO>
 
-    fun insertToyCart(toysDetailVO: ToyDetailVO)
+    fun insertToyCart(toysDetailVO: ToyDetailVO,toyCartVO: ToyCartVO?)
     fun getToysCartDataList(): LiveData<List<ToyCartVO>>
+    fun getToysCartById(toyId: Int): LiveData<ToyCartVO>
 
     fun insertToyCartByCart(toyCartVO: ToyCartVO)
 

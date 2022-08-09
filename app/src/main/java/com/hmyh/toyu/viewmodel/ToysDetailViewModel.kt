@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.hmyh.toyu.data.model.ToyUModel
 import com.hmyh.toyu.data.model.impl.ToyUModelImpl
+import com.hmyh.toyu.data.vos.ToyCartVO
 import com.hmyh.toyu.data.vos.ToyDetailVO
 import com.hmyh.toyu.utils.getToyDetail
 
@@ -20,12 +21,15 @@ class ToysDetailViewModel: ViewModel() {
     }
 
     fun getToysDetailByToyId(toyId: Int): LiveData<ToyDetailVO>{
-
         return mModel.getToysDetailByToyId(toyId)
     }
 
-    fun setToyCart(toyDetailVO: ToyDetailVO){
-        mModel.insertToyCart(toyDetailVO)
+    fun getToysCartByToyId(toyId: Int): LiveData<ToyCartVO>{
+        return mModel.getToysCartById(toyId)
+    }
+
+    fun setToyCart(toyDetailVO: ToyDetailVO,toyCartVO: ToyCartVO?){
+        mModel.insertToyCart(toyDetailVO,toyCartVO)
     }
 
 }

@@ -43,26 +43,33 @@ object ToyUModelImpl: BaseAppModel(),ToyUModel {
         return mDatabase.toysDetailDao().getToysDetailById(toysId)
     }
 
-    override fun insertToyCart(toysDetailVO: ToyDetailVO) {
+    override fun insertToyCart(toysDetailVO: ToyDetailVO,toyCartVO: ToyCartVO?) {
 
-        var toyQtuCount: Int = 1
+        var toyQtyCount: Int = 0
 
-        if (toysDetailVO.id == toyId){
-            toyQtuCount++
+        if (toyCartVO == null){
+            toyQtyCount = 1
+        }
+        else{
+            toyCartVO.toyQtyCount.let { mToyQtyCount->
+                toyQtyCount = mToyQtyCount + 1
+            }
         }
 
-        toyId = toysDetailVO.id
-
-        var toyCartVO = ToyCartVO(toysDetailVO.id,toysDetailVO.name,toysDetailVO.toyType,toysDetailVO.image,
+        var mToyCartVO = ToyCartVO(toysDetailVO.id,toysDetailVO.name,toysDetailVO.toyType,toysDetailVO.image,
         toysDetailVO.qty,toysDetailVO.price,toysDetailVO.rating,toysDetailVO.description,toysDetailVO.availableColorList,
-        toysDetailVO.owner,toyQtuCount)
+        toysDetailVO.owner,toyQtyCount)
 
-        mDatabase.toyCartDao().insertToyCart(toyCartVO).subscribeDBWithCompletable()
+        mDatabase.toyCartDao().insertToyCart(mToyCartVO).subscribeDBWithCompletable()
 
     }
 
     override fun getToysCartDataList(): LiveData<List<ToyCartVO>> {
         return mDatabase.toyCartDao().retrieveToyCartList()
+    }
+
+    override fun getToysCartById(toyId: Int): LiveData<ToyCartVO> {
+        return mDatabase.toyCartDao().getToysCartById(toyId)
     }
 
     override fun insertToyCartByCart(toyCartVO: ToyCartVO) {

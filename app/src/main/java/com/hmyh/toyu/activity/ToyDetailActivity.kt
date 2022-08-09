@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.hmyh.toyu.R
 import com.hmyh.toyu.adapter.ColorsAdapter
 import com.hmyh.toyu.data.vos.ColorsListVO
+import com.hmyh.toyu.data.vos.ToyCartVO
 import com.hmyh.toyu.data.vos.ToyDetailVO
 import com.hmyh.toyu.databinding.ActivityToyDetailBinding
 import com.hmyh.toyu.utils.getColorList
@@ -29,6 +30,7 @@ class ToyDetailActivity: BaseActivity() {
     private var toysId: Int?=null
 
     private var mToyDetailVo: ToyDetailVO?=null
+    private var mToyCartVo: ToyCartVO?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +55,7 @@ class ToyDetailActivity: BaseActivity() {
 
         binding.rlAddToCart.setOnClickListener {
             mToyDetailVo?.let { data ->
-                viewModel.setToyCart(data)
+                viewModel.setToyCart(data,mToyCartVo)
             }
             Toast.makeText(this,"Item Added",Toast.LENGTH_SHORT).show()
         }
@@ -81,6 +83,14 @@ class ToyDetailActivity: BaseActivity() {
                 it?.let { toyDetail->
                     mToyDetailVo = toyDetail
                     setUpData(toyDetail)
+                }
+            })
+        }
+
+        toysId?.let { id->
+            viewModel.getToysCartByToyId(id).observe(this, Observer {
+                it?.let { toyCartVO ->
+                    mToyCartVo = toyCartVO
                 }
             })
         }

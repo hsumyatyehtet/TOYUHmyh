@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.hmyh.toyu.data.vos.ToyCartVO
+import com.hmyh.toyu.data.vos.ToyDetailVO
 import io.reactivex.Completable
 
 @Dao
@@ -16,5 +17,8 @@ interface ToyCartDao {
 
     @Query("select * from toy_cart")
     fun retrieveToyCartList(): LiveData<List<ToyCartVO>>
+
+    @Query("select * from toy_cart where id =:toyId")
+    fun getToysCartById(toyId: Int): LiveData<ToyCartVO>
 
 }
