@@ -57,12 +57,16 @@ object ToyUModelImpl: BaseAppModel(),ToyUModel {
         toysDetailVO.qty,toysDetailVO.price,toysDetailVO.rating,toysDetailVO.description,toysDetailVO.availableColorList,
         toysDetailVO.owner,toyQtuCount)
 
-        mDatabase.toyCartDao().insertCustomer(toyCartVO).subscribeDBWithCompletable()
+        mDatabase.toyCartDao().insertToyCart(toyCartVO).subscribeDBWithCompletable()
 
     }
 
     override fun getToysCartDataList(): LiveData<List<ToyCartVO>> {
         return mDatabase.toyCartDao().retrieveToyCartList()
+    }
+
+    override fun insertToyCartByCart(toyCartVO: ToyCartVO) {
+        mDatabase.toyCartDao().insertToyCart(toyCartVO).subscribeDBWithCompletable()
     }
 
 }

@@ -21,4 +21,6 @@ interface ToyUModel {
     fun insertToyCart(toysDetailVO: ToyDetailVO)
     fun getToysCartDataList(): LiveData<List<ToyCartVO>>
 
+    fun insertToyCartByCart(toyCartVO: ToyCartVO)
+
 }

@@ -40,6 +40,6 @@ data class ToyCartVO(
     var owner: OwnerVO? = null,
 
     @ColumnInfo(name = "toy_qty_count")
-    var toyQtyCount: Int?=null
+    var toyQtyCount: Int=0
 
 )

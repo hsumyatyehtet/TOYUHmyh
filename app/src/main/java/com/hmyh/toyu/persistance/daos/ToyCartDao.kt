@@ -12,7 +12,7 @@ import io.reactivex.Completable
 interface ToyCartDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertCustomer(toyCartVO: ToyCartVO): Completable
+    fun insertToyCart(toyCartVO: ToyCartVO): Completable
 
     @Query("select * from toy_cart")
     fun retrieveToyCartList(): LiveData<List<ToyCartVO>>

@@ -10,14 +10,20 @@ import com.hmyh.toyu.databinding.ViewHolderInToyBinding
 import com.hmyh.toyu.view.holder.ColorsViewHolder
 import com.hmyh.toyu.view.holder.ToyCartViewHolder
 
-class ToyCartAdapter: BaseRecyclerAdapter<ToyCartViewHolder,ToyCartVO>() {
+class ToyCartAdapter(private val delegate: Delegate)
+    : BaseRecyclerAdapter<ToyCartViewHolder,ToyCartVO>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToyCartViewHolder{
         return ToyCartViewHolder(
             ViewHolderInCartBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
-            )
+            ),
+            delegate
         )
+    }
+
+    interface Delegate{
+        fun onTapItem(toyCartVO: ToyCartVO)
     }
 
 }

@@ -145,6 +145,7 @@
         android:orientation="horizontal">
 
         <RelativeLayout
+            android:id="@+id/rlDesc"
             android:layout_width="38dp"
             android:layout_height="38dp"
             android:background="@drawable/count_rect"
@@ -169,6 +170,7 @@
             android:textSize="@dimen/text_regular" />
 
         <RelativeLayout
+            android:id="@+id/rlIncrease"
             android:layout_width="38dp"
             android:layout_height="38dp"
             android:background="@drawable/count_rect"

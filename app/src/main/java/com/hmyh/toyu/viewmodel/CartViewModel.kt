@@ -2,11 +2,12 @@ package com.hmyh.toyu.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.hmyh.toyu.adapter.ToyCartAdapter
 import com.hmyh.toyu.data.model.ToyUModel
 import com.hmyh.toyu.data.model.impl.ToyUModelImpl
 import com.hmyh.toyu.data.vos.ToyCartVO
 
-class CartViewModel: ViewModel() {
+class CartViewModel: ViewModel(),ToyCartAdapter.Delegate {
 
     private val mModel: ToyUModel = ToyUModelImpl
 
@@ -15,5 +16,12 @@ class CartViewModel: ViewModel() {
     fun getToyCartListData(): LiveData<List<ToyCartVO>>{
         return mToyCartList
     }
+
+    override fun onTapItem(toyCartVO: ToyCartVO) {
+
+        mModel.insertToyCartByCart(toyCartVO)
+
+    }
+
 
 }

@@ -46,7 +46,7 @@ class CartFragment : BaseFragment() {
     }
 
     private fun setUpRecyclerView() {
-        mAdapter = ToyCartAdapter()
+        mAdapter = ToyCartAdapter(viewModel)
         binding.rvCart.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.rvCart.adapter = mAdapter
