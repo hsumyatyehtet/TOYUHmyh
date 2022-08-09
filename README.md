@@ -4,7 +4,7 @@ TOYU e-commerce
 ### App Fetures
 
  * Toys List show toys data
- * Toys information save in local database
+ * Toys information save in local database with dummy data
  * Toys detail show toys detail information and add to cart item to Cart list
  * Item add to cart use local database (Room database)
  * cart count can inc and dec with local database
