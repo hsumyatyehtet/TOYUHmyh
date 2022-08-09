@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.hmyh.toyu.activity.SearchActivity
 import com.hmyh.toyu.activity.ToyDetailActivity
 import com.hmyh.toyu.adapter.ToyAdapter
 import com.hmyh.toyu.adapter.ToyPromotionAdapter
@@ -42,6 +43,7 @@ class HomeFragment : BaseFragment() {
 
         setUpOnUiReady()
         setUpDataObservation()
+        setUpListener()
     }
 
     private fun setUpOnUiReady() {
@@ -78,6 +80,12 @@ class HomeFragment : BaseFragment() {
             }
         })
 
+    }
+
+    private fun setUpListener() {
+        binding.rlSearchContainer.setOnClickListener {
+            startActivity(SearchActivity.newIntent(requireContext()))
+        }
     }
 
     private fun setUpRecyclerView() {

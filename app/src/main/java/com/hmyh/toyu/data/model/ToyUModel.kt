@@ -24,4 +24,6 @@ interface ToyUModel {
 
     fun insertToyCartByCart(toyCartVO: ToyCartVO)
 
+    fun loadSearch(searchWord: String): LiveData<List<ToyListVO>>
+
 }

@@ -76,4 +76,8 @@ object ToyUModelImpl: BaseAppModel(),ToyUModel {
         mDatabase.toyCartDao().insertToyCart(toyCartVO).subscribeDBWithCompletable()
     }
 
+    override fun loadSearch(searchWord: String): LiveData<List<ToyListVO>> {
+        return mDatabase.toyDao().retrieveToyListBySearch("%$searchWord%")
+    }
+
 }

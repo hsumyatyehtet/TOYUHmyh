@@ -6,8 +6,8 @@
 
     <solid android:color="#FF6464"/>
 
-    <size android:height="@dimen/dimen_30"
-        android:width="@dimen/dimen_30"/>
+    <size android:height="24dp"
+        android:width="24dp"/>
 
     <corners
       android:radius="20dp"/>

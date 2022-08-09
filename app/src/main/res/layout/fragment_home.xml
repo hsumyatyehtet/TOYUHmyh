@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rvToyPromotion"
         android:layout_marginHorizontal="@dimen/margin_medium_2"
+        android:elevation="@dimen/margin_medium"
         android:layout_marginTop="-40dp">
 
         <RelativeLayout
@@ -63,11 +64,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Search Toys"
-                android:textSize="@dimen/text_regular"
-                android:textColor="@color/mainColor2"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/margin_medium_2"/>
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:text="Search Toys"
+                android:textColor="@color/mainColor2"
+                android:textSize="@dimen/text_regular" />
 
             <RelativeLayout
                 android:layout_width="52dp"

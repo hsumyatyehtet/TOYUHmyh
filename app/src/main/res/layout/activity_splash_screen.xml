@@ -5,9 +5,9 @@
     android:background="@color/colorPrimary">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/margin_150"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_toy_you"
+        android:src="@drawable/toy_u_white"
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>
