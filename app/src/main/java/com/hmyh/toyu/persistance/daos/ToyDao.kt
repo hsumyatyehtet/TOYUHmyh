@@ -17,4 +17,7 @@ interface ToyDao {
     @Query("select * from toy_list")
     fun retrieveToyList(): LiveData<List<ToyListVO>>
 
+    @Query("select * from toy_list where name like :searchWord")
+    fun retrieveToyListBySearch(searchWord: String): LiveData<List<ToyListVO>>
+
 }

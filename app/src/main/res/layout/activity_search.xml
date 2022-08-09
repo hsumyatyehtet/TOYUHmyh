@@ -27,16 +27,25 @@
             android:layout_toEndOf="@+id/ivBackSearch"
             android:background="@drawable/bg_home_search">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etToySearch"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/margin_medium_2"
-                android:text="Search Toys"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_toStartOf="@+id/rlSearchLogo"
+                android:background="@null"
+                android:hint="Search by name"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:textColor="@color/mainColor2"
-                android:textSize="@dimen/text_regular" />
+                android:textColorHint="@color/mainColor3"
+                android:textSize="@dimen/text_small" />
 
             <RelativeLayout
+                android:id="@+id/rlSearchLogo"
                 android:layout_width="52dp"
                 android:layout_height="48dp"
                 android:layout_alignParentEnd="true"
@@ -58,9 +67,9 @@
         android:id="@+id/tvSearchResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/rlToolbarSearch"
-        android:text="1 result found"
+        android:layout_centerHorizontal="true"
+        android:text=""
         android:textColor="@color/mainColor3"
         android:textSize="@dimen/text_regular" />
 
