@@ -4,17 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hmyh.toyu.adapter.ToyAdapter
 import com.hmyh.toyu.adapter.ToyPromotionAdapter
+import com.hmyh.toyu.data.vos.ToyListVO
 import com.hmyh.toyu.databinding.FragmentHomeBinding
-import com.hmyh.toyu.utils.getToyList
 import com.hmyh.toyu.utils.getToyPromotionList
+import com.hmyh.toyu.viewmodel.HomeViewModel
 
 class HomeFragment: BaseFragment() {
 
+    private lateinit var viewModel: HomeViewModel
     private lateinit var binding: FragmentHomeBinding
+
     private lateinit var mToyPromotionAdapter: ToyPromotionAdapter
     private lateinit var mToyAdapter: ToyAdapter
 
@@ -30,13 +35,30 @@ class HomeFragment: BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setUpViewModel()
         setUpRecyclerView()
+
+        setUpOnUiReady()
         setUpDataObservation()
+    }
+
+    private fun setUpOnUiReady() {
+        viewModel.onUiReady()
+    }
+
+    private fun setUpViewModel() {
+        viewModel = ViewModelProviders.of(this)[HomeViewModel::class.java]
     }
 
     private fun setUpDataObservation() {
         mToyPromotionAdapter.setNewData(getToyPromotionList())
-        mToyAdapter.setNewData(getToyList())
+
+        viewModel.getToyListData().observe(viewLifecycleOwner, Observer {
+            it?.let { toyList->
+                mToyAdapter.setNewData(toyList as MutableList<ToyListVO>)
+            }
+        })
+
     }
 
     private fun setUpRecyclerView() {

@@ -1,14 +1,14 @@
 package com.hmyh.toyu.view.holder
 
 import com.bumptech.glide.Glide
-import com.hmyh.toyu.data.ToyPromotionVO
+import com.hmyh.toyu.data.vos.ToyPromotionListVO
 import com.hmyh.toyu.databinding.ViewHolderInToyPromotionBinding
 
 class ToyPromotionViewHolder(private val binding: ViewHolderInToyPromotionBinding)
-    :BaseViewHolder<ToyPromotionVO>(binding.root){
+    :BaseViewHolder<ToyPromotionListVO>(binding.root){
 
 
-    override fun bindData(data: ToyPromotionVO) {
+    override fun bindData(data: ToyPromotionListVO) {
         mData = data
 
         Glide.with(itemView.context)

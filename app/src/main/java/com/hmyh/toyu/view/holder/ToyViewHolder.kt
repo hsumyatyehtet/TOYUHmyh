@@ -3,16 +3,14 @@ package com.hmyh.toyu.view.holder
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.hmyh.toyu.R
-import com.hmyh.toyu.data.ToyPromotionVO
-import com.hmyh.toyu.data.ToyVO
+import com.hmyh.toyu.data.vos.ToyListVO
 import com.hmyh.toyu.databinding.ViewHolderInToyBinding
-import com.hmyh.toyu.databinding.ViewHolderInToyPromotionBinding
 
 class ToyViewHolder(private val binding: ViewHolderInToyBinding)
-    :BaseViewHolder<ToyVO>(binding.root){
+    :BaseViewHolder<ToyListVO>(binding.root){
 
 
-    override fun bindData(data: ToyVO) {
+    override fun bindData(data: ToyListVO) {
         mData = data
 
         if (data.toyType.equals("NEW")){
