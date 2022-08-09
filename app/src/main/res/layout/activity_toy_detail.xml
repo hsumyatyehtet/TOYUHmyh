@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llCartContainer">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rlToolbarDetail"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/ivBackDetail"
+                    android:layout_width="@dimen/margin_large"
+                    android:layout_height="@dimen/margin_medium_3"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:src="@drawable/toy_detail_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_toEndOf="@+id/ivBackDetail"
+                    android:text="Toy Details"
+                    android:textColor="@color/mainColor2"
+                    android:textSize="@dimen/text_regular_2x" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlImageDetail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_200"
+                android:layout_below="@+id/rlToolbarDetail"
+                android:layout_marginHorizontal="@dimen/margin_medium_2">
+
+                <RelativeLayout
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:background="@drawable/circle_white"
+                    android:layout_marginStart="2dp"
+                    android:layout_centerVertical="true"
+                    android:elevation="@dimen/margin_small">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/arrow_left_detail"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:background="@drawable/circle_white"
+                    android:layout_marginEnd="2dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:elevation="@dimen/margin_small">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/arrow_right_detail"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/ivDetailImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/toy_arrowplain" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rlImageDetail"
+                android:background="@drawable/bg_toy_detail"
+                android:elevation="@dimen/margin_medium">
+
+                <RelativeLayout
+                    android:id="@+id/rlFav"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:background="@drawable/bg_toy_detail_fav">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/detail_fav" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvToyTypeDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/rlFav"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/margin_medium_3"
+                    android:layout_toStartOf="@+id/rlFav"
+                    android:text="Limited Edition"
+                    android:textColor="@color/mainColor2"
+                    android:textSize="@dimen/text_regular" />
+
+                <TextView
+                    android:id="@+id/tvToyPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvToyTypeDetail"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:text="$75.00"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_heading_1x" />
+
+                <TextView
+                    android:id="@+id/tvToyNameDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvToyPrice"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:text="Remote Submarine"
+                    android:textColor="@color/mainColor2"
+                    android:textSize="@dimen/text_regular_2x" />
+
+                <LinearLayout
+                    android:id="@+id/llRatingBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvToyNameDetail"
+                    android:layout_marginHorizontal="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                        android:id="@+id/ratingBar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:rating="4"
+                        android:theme="@style/RatingBar" />
+
+                    <TextView
+                        android:id="@+id/tvRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_small"
+                        android:gravity="center_vertical"
+                        android:text="4.0"
+                        android:textColor="@color/mainColor2" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvToyDescDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llRatingBar"
+                    android:layout_marginHorizontal="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/tv_toy_desc"
+                    android:textColor="@color/mainColor2"
+                    android:textSize="@dimen/text_regular" />
+
+                <View
+                    android:id="@+id/viewColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/tvToyDescDetail"
+                    android:layout_marginHorizontal="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:background="#D8D8D8" />
+
+                <TextView
+                    android:id="@+id/tvAvailableColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/viewColor"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_medium_3"
+                    android:text="Available Colors"
+                    android:textColor="@color/mainColor2"
+                    android:textSize="@dimen/text_regular_2x" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAvailableColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvAvailableColor"
+                    android:layout_marginHorizontal="@dimen/margin_card_medium_2"
+                    android:layout_marginTop="@dimen/margin_medium" />
+
+                <View
+                    android:id="@+id/viewOwner"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/rvAvailableColor"
+                    android:layout_marginHorizontal="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_medium_3"
+                    android:background="#D8D8D8" />
+
+                <RelativeLayout
+                    android:id="@+id/rlOwnerContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/viewOwner"
+                    android:layout_marginHorizontal="@dimen/margin_medium_2"
+                    android:layout_marginVertical="@dimen/margin_medium_3">
+
+                    <ImageView
+                        android:id="@+id/ivOwner"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/owner_thomas" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_medium_2"
+                        android:layout_toEndOf="@+id/ivOwner"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="OWNER BY"
+                            android:textColor="@color/mainColor3"
+                            android:textSize="@dimen/text_regular" />
+
+                        <TextView
+                            android:id="@+id/tvOwnerName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thomas"
+                            android:textColor="@color/mainColor2"
+                            android:textSize="@dimen/text_regular" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/llCartContainer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_50"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Add To Cart"
+                android:textColor="@color/mainColor2"
+                android:textSize="@dimen/text_regular" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_swap">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Swap With Yours"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_regular" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

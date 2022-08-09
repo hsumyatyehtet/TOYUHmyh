@@ -4,6 +4,7 @@
     package="com.hmyh.toyu">
 
     <application
+        android:name=".ToyUApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -30,6 +31,10 @@
             android:screenOrientation="portrait"/>
 
         <activity android:name=".activity.MainActivity"
+            android:theme="@style/Theme.TOYUHmyh.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.ToyDetailActivity"
             android:theme="@style/Theme.TOYUHmyh.NoActionBar"
             android:screenOrientation="portrait"/>
 
