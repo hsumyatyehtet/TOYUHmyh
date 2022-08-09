@@ -14,14 +14,25 @@
         android:theme="@style/Theme.TOYUHmyh"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".activity.SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.TOYUHmyh.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.GetStartActivity"
+            android:theme="@style/Theme.TOYUHmyh.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.MainActivity"
+            android:theme="@style/Theme.TOYUHmyh.NoActionBar"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TOYUHmyh</string>
+    <string name="tv_toy_title">Swap Your Old Toys</string>
+    <string name="tv_toy_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt nunc non orci feugiat ornare.</string>
 </resources>
