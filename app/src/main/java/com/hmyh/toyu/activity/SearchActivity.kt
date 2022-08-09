@@ -1,5 +1,6 @@
 package com.hmyh.toyu.activity
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -17,7 +18,7 @@ import com.hmyh.toyu.databinding.ActivitySearchBinding
 import com.hmyh.toyu.utils.getToyList
 import com.hmyh.toyu.viewmodel.SearchViewModel
 
-class SearchActivity: BaseActivity() {
+class SearchActivity : BaseActivity() {
 
     private lateinit var viewModel: SearchViewModel
     private lateinit var binding: ActivitySearchBinding
@@ -33,14 +34,21 @@ class SearchActivity: BaseActivity() {
         setUpViewModel()
         setUpRecyclerView()
 
+        setUpDataObservation()
         setUpListener()
+    }
+
+    private fun setUpDataObservation() {
+        viewModel.getNavigateToToyDetail().observe(this, Observer {
+            it?.let { toyId ->
+                startActivity(ToyDetailActivity.newIntent(this, toyId))
+            }
+        })
     }
 
     private fun setUpListener() {
         binding.etToySearch.requestFocus()
-
         val handler = Handler(Looper.getMainLooper())
-
         binding.etToySearch.addTextChangedListener(object : TextWatcher {
 
             override fun afterTextChanged(s: Editable?) {
@@ -57,17 +65,21 @@ class SearchActivity: BaseActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
         })
+
+        binding.ivBackSearch.setOnClickListener {
+            finish()
+        }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun onChangeTextAfterSecond(searchWord: String) {
 
-        if (searchWord == ""){
+        if (searchWord == "") {
             mAdapter.setNewData(mutableListOf())
             binding.tvSearchResult.text = "No result"
-        }
-        else{
+        } else {
             viewModel.loadSearch(searchWord).observe(this, Observer {
-                it?.let { toyList->
+                it?.let { toyList ->
                     mAdapter.setNewData(toyList as MutableList<ToyListVO>)
 
                     var size = toyList.size
@@ -86,15 +98,15 @@ class SearchActivity: BaseActivity() {
     private fun setUpRecyclerView() {
         mAdapter = SearchAdapter(viewModel)
         binding.rvSearch.layoutManager =
-            GridLayoutManager(this,2)
+            GridLayoutManager(this, 2)
         binding.rvSearch.adapter = mAdapter
 
     }
 
-    companion object{
+    companion object {
 
-        fun newIntent(context: Context): Intent{
-            return Intent(context,SearchActivity::class.java)
+        fun newIntent(context: Context): Intent {
+            return Intent(context, SearchActivity::class.java)
         }
 
     }
