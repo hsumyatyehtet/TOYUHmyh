@@ -3,6 +3,7 @@ package com.hmyh.toyu.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -54,6 +55,7 @@ class ToyDetailActivity: BaseActivity() {
             mToyDetailVo?.let { data ->
                 viewModel.setToyCart(data)
             }
+            Toast.makeText(this,"Item Added",Toast.LENGTH_SHORT).show()
         }
 
     }
