@@ -1,5 +1,6 @@
 package com.hmyh.toyu.view.holder
 
+import android.annotation.SuppressLint
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.hmyh.toyu.R
@@ -32,7 +33,7 @@ class ToyCartViewHolder(
         itemView.rlIncrease.setOnClickListener {
             mData?.let { toyCart->
 
-                if (toyCart.toyQtyCount <= toyCart.qty!!){
+                if (toyCart.toyQtyCount < toyCart.qty!!){
                     toyCart.toyQtyCount++
                 }
 
@@ -43,6 +44,7 @@ class ToyCartViewHolder(
 
     }
 
+    @SuppressLint("SetTextI18n")
     override fun bindData(data: ToyCartVO) {
         mData = data
 
@@ -52,6 +54,9 @@ class ToyCartViewHolder(
         else{
             binding.tvToyTypeCart.setTextColor(ContextCompat.getColor(itemView.context, R.color.mainColor3))
         }
+
+        var remainItem: Int?=null
+        remainItem = data.qty!! - data.toyQtyCount
 
         Glide.with(itemView.context)
             .load(data.image)
@@ -63,7 +68,7 @@ class ToyCartViewHolder(
             .load(data.owner?.image)
             .into(binding.ivOwnerCart)
         binding.tvOwnerNameCart.text = data.owner?.name ?: ""
-        binding.tvToyItemRemain.text = "${data.qty} item left"
+        binding.tvToyItemRemain.text = "$remainItem item left"
         binding.tvToyPriceCart.text = "$ ${data.price}"
         binding.tvToyCount.text = data.toyQtyCount.toString()
 
