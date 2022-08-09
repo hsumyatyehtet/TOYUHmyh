@@ -55,6 +55,17 @@ class ToyCartViewHolder(
             binding.tvToyTypeCart.setTextColor(ContextCompat.getColor(itemView.context, R.color.mainColor3))
         }
 
+        if (data.toyQtyCount == 0){
+            Glide.with(itemView.context)
+                .load(R.drawable.ic_check_false)
+                .into(binding.ivChecked)
+        }
+        else{
+            Glide.with(itemView.context)
+                .load(R.drawable.ic_check_true)
+                .into(binding.ivChecked)
+        }
+
         var remainItem: Int?=null
         remainItem = data.qty!! - data.toyQtyCount
 
