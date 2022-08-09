@@ -6,8 +6,8 @@ import com.hmyh.toyu.data.vos.ToyListVO
 
 fun getToyPromotionList(): MutableList<ToyPromotionListVO> {
     return mutableListOf(
-        ToyPromotionListVO(1, "Toy Couple", R.drawable.toy_promotion_couple),
-        ToyPromotionListVO(2, "Toy Squid Game", R.drawable.toy_promotion_squid_game)
+        ToyPromotionListVO(5, "Toy Couple", R.drawable.toy_promotion_couple),
+        ToyPromotionListVO(6, "Toy Squid Game", R.drawable.toy_promotion_squid_game)
     )
 }
 

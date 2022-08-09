@@ -5,13 +5,19 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.hmyh.toyu.data.vos.ToyListVO
+import com.hmyh.toyu.data.vos.ToyPromotionListVO
 import com.hmyh.toyu.persistance.daos.ToyDao
+import com.hmyh.toyu.persistance.daos.ToyPromotionDao
 
-@Database(entities = [ToyListVO::class],
+@Database(entities = [
+    ToyListVO::class,
+    ToyPromotionListVO::class
+                     ],
     version = 1, exportSchema = false)
 abstract class ToyUDatabase : RoomDatabase() {
 
     abstract fun toyDao(): ToyDao
+    abstract fun toyPromotionDao(): ToyPromotionDao
 
     companion object {
 

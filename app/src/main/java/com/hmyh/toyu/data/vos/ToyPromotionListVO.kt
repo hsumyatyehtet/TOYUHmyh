@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "toy_promotion")
+@Entity(tableName = "toy_promotion_list")
 data class ToyPromotionListVO(
 
     @PrimaryKey(autoGenerate = true)

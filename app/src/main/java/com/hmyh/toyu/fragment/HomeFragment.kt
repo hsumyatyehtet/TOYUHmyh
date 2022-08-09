@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.hmyh.toyu.adapter.ToyAdapter
 import com.hmyh.toyu.adapter.ToyPromotionAdapter
 import com.hmyh.toyu.data.vos.ToyListVO
+import com.hmyh.toyu.data.vos.ToyPromotionListVO
 import com.hmyh.toyu.databinding.FragmentHomeBinding
 import com.hmyh.toyu.utils.getToyPromotionList
 import com.hmyh.toyu.viewmodel.HomeViewModel
@@ -51,11 +52,16 @@ class HomeFragment: BaseFragment() {
     }
 
     private fun setUpDataObservation() {
-        mToyPromotionAdapter.setNewData(getToyPromotionList())
 
         viewModel.getToyListData().observe(viewLifecycleOwner, Observer {
             it?.let { toyList->
                 mToyAdapter.setNewData(toyList as MutableList<ToyListVO>)
+            }
+        })
+
+        viewModel.getToyPromotionListData().observe(viewLifecycleOwner, Observer {
+            it?.let { toyPromotionList->
+                mToyPromotionAdapter.setNewData(toyPromotionList as MutableList<ToyPromotionListVO>)
             }
         })
 
