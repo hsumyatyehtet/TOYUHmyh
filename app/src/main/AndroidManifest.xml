@@ -38,6 +38,10 @@
             android:theme="@style/Theme.TOYUHmyh.NoActionBar"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".activity.SearchActivity"
+            android:theme="@style/Theme.TOYUHmyh.NoActionBar"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
