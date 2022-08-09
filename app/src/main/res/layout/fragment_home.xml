@@ -62,8 +62,14 @@
             <RelativeLayout
                 android:layout_width="52dp"
                 android:layout_height="48dp"
-                android:background="@drawable/bg_search"
-                android:layout_alignParentEnd="true">
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/bg_search">
+
+                <ImageView
+                    android:layout_width="@dimen/margin_medium_3"
+                    android:layout_height="@dimen/margin_medium_3"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/search" />
 
             </RelativeLayout>
 
@@ -76,6 +82,12 @@
             android:layout_alignParentEnd="true"
             android:layout_marginStart="@dimen/margin_medium"
             android:background="@drawable/bg_home_search">
+
+            <ImageView
+                android:layout_width="@dimen/margin_medium_3"
+                android:layout_height="@dimen/margin_medium_3"
+                android:src="@drawable/filter"
+                android:layout_centerInParent="true"/>
 
         </RelativeLayout>
 
