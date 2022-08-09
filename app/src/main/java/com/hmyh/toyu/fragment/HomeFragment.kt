@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.hmyh.toyu.activity.ToyDetailActivity
 import com.hmyh.toyu.adapter.ToyAdapter
 import com.hmyh.toyu.adapter.ToyPromotionAdapter
 import com.hmyh.toyu.data.vos.ToyListVO
@@ -65,6 +66,12 @@ class HomeFragment: BaseFragment() {
             }
         })
 
+        viewModel.getNavigateToToyDetail().observe(viewLifecycleOwner, Observer {
+            it?.let { toyId->
+                startActivity(ToyDetailActivity.newIntent(requireContext(),toyId))
+            }
+        })
+
     }
 
     private fun setUpRecyclerView() {
@@ -73,7 +80,7 @@ class HomeFragment: BaseFragment() {
             LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         binding.rvToyPromotion.adapter = mToyPromotionAdapter
 
-        mToyAdapter = ToyAdapter()
+        mToyAdapter = ToyAdapter(viewModel)
         binding.rvToy.layoutManager =
             GridLayoutManager(context,2)
         binding.rvToy.adapter = mToyAdapter
