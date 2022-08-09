@@ -14,7 +14,13 @@ data class ToyPromotionListVO(
     @ColumnInfo(name = "name")
     var name: String?=null,
 
+    @ColumnInfo(name="toy_type")
+    var toyType: String?=null,
+
     @ColumnInfo(name = "image")
-    var image: Int?=null
+    var image: Int?=null,
+
+    @ColumnInfo(name = "qty")
+    var qty: Int?=null
 
 )

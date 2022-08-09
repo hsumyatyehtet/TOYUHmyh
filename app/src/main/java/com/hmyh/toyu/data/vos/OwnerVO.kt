@@ -4,14 +4,17 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "color_list")
-data class ColorsListVO(
+@Entity(tableName = "owner")
+data class OwnerVO(
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "color_id")
-    var colorId: Int? = null,
+    @ColumnInfo(name = "id")
+    var id: Int?=null,
+
+    @ColumnInfo(name = "name")
+    var name: String?=null,
 
     @ColumnInfo(name = "image")
-    var image: Int? = null
+    var image: Int?=null
 
 )

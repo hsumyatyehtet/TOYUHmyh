@@ -18,6 +18,9 @@ data class ToyListVO(
     var toyType: String?=null,
 
     @ColumnInfo(name = "image")
-    var image: Int?=null
+    var image: Int?=null,
+
+    @ColumnInfo(name = "qty")
+    var qty: Int?=null
 
 )
