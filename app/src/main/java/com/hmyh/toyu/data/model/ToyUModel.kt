@@ -1,6 +1,7 @@
 package com.hmyh.toyu.data.model
 
 import androidx.lifecycle.LiveData
+import com.hmyh.toyu.data.vos.ToyCartVO
 import com.hmyh.toyu.data.vos.ToyDetailVO
 import com.hmyh.toyu.data.vos.ToyListVO
 import com.hmyh.toyu.data.vos.ToyPromotionListVO
@@ -16,5 +17,8 @@ interface ToyUModel {
 
     fun insertToysDetail(toyDetailList: List<ToyDetailVO>)
     fun getToysDetailByToyId(toysId: Int): LiveData<ToyDetailVO>
+
+    fun insertToyCart(toysDetailVO: ToyDetailVO)
+    fun getToysCartDataList(): LiveData<List<ToyCartVO>>
 
 }

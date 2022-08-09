@@ -27,6 +27,8 @@ class ToyDetailActivity: BaseActivity() {
 
     private var toysId: Int?=null
 
+    private var mToyDetailVo: ToyDetailVO?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -47,6 +49,13 @@ class ToyDetailActivity: BaseActivity() {
         binding.ivBackDetail.setOnClickListener {
             finish()
         }
+
+        binding.rlAddToCart.setOnClickListener {
+            mToyDetailVo?.let { data ->
+                viewModel.setToyCart(data)
+            }
+        }
+
     }
 
     private fun getDataFromIntent() {
@@ -68,6 +77,7 @@ class ToyDetailActivity: BaseActivity() {
         toysId?.let { mToyId->
             viewModel.getToysDetailByToyId(mToyId).observe(this, Observer {
                 it?.let { toyDetail->
+                    mToyDetailVo = toyDetail
                     setUpData(toyDetail)
                 }
             })
