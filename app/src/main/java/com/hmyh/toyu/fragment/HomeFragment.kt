@@ -17,7 +17,7 @@ import com.hmyh.toyu.databinding.FragmentHomeBinding
 import com.hmyh.toyu.utils.getToyPromotionList
 import com.hmyh.toyu.viewmodel.HomeViewModel
 
-class HomeFragment: BaseFragment() {
+class HomeFragment : BaseFragment() {
 
     private lateinit var viewModel: HomeViewModel
     private lateinit var binding: FragmentHomeBinding
@@ -30,7 +30,7 @@ class HomeFragment: BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(inflater,container,false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -55,34 +55,40 @@ class HomeFragment: BaseFragment() {
     private fun setUpDataObservation() {
 
         viewModel.getToyListData().observe(viewLifecycleOwner, Observer {
-            it?.let { toyList->
+            it?.let { toyList ->
                 mToyAdapter.setNewData(toyList as MutableList<ToyListVO>)
             }
         })
 
         viewModel.getToyPromotionListData().observe(viewLifecycleOwner, Observer {
-            it?.let { toyPromotionList->
+            it?.let { toyPromotionList ->
                 mToyPromotionAdapter.setNewData(toyPromotionList as MutableList<ToyPromotionListVO>)
             }
         })
 
         viewModel.getNavigateToToyDetail().observe(viewLifecycleOwner, Observer {
-            it?.let { toyId->
-                startActivity(ToyDetailActivity.newIntent(requireContext(),toyId))
+            it?.let { toyId ->
+                startActivity(ToyDetailActivity.newIntent(requireContext(), toyId))
+            }
+        })
+
+        viewModel.getNavigateToyToyPromotionDetail().observe(viewLifecycleOwner, Observer {
+            it?.let { toyId ->
+                startActivity(ToyDetailActivity.newIntent(requireContext(), toyId))
             }
         })
 
     }
 
     private fun setUpRecyclerView() {
-        mToyPromotionAdapter = ToyPromotionAdapter()
+        mToyPromotionAdapter = ToyPromotionAdapter(viewModel)
         binding.rvToyPromotion.layoutManager =
-            LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvToyPromotion.adapter = mToyPromotionAdapter
 
         mToyAdapter = ToyAdapter(viewModel)
         binding.rvToy.layoutManager =
-            GridLayoutManager(context,2)
+            GridLayoutManager(context, 2)
         binding.rvToy.adapter = mToyAdapter
     }
 

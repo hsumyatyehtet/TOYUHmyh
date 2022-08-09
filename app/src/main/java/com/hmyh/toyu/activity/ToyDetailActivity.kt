@@ -3,10 +3,12 @@ package com.hmyh.toyu.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.hmyh.toyu.R
 import com.hmyh.toyu.adapter.ColorsAdapter
 import com.hmyh.toyu.data.vos.ColorsListVO
 import com.hmyh.toyu.data.vos.ToyDetailVO
@@ -37,7 +39,14 @@ class ToyDetailActivity: BaseActivity() {
 
         setUpOnUiReady()
         setUpDataObservation()
+        setUpListener()
 
+    }
+
+    private fun setUpListener() {
+        binding.ivBackDetail.setOnClickListener {
+            finish()
+        }
     }
 
     private fun getDataFromIntent() {
@@ -67,6 +76,13 @@ class ToyDetailActivity: BaseActivity() {
     }
 
     private fun setUpData(toyDetail: ToyDetailVO) {
+
+        if (toyDetail.toyType.equals("NEW")){
+            binding.tvToyTypeDetail.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary))
+        }
+        else{
+            binding.tvToyTypeDetail.setTextColor(ContextCompat.getColor(this, R.color.mainColor3))
+        }
 
         Glide.with(this)
             .load(toyDetail.image)

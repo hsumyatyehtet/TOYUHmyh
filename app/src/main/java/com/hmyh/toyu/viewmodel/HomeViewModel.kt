@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.hmyh.toyu.adapter.ToyAdapter
+import com.hmyh.toyu.adapter.ToyPromotionAdapter
 import com.hmyh.toyu.data.model.ToyUModel
 import com.hmyh.toyu.data.model.impl.ToyUModelImpl
 import com.hmyh.toyu.data.vos.ToyListVO
@@ -13,7 +14,7 @@ import com.hmyh.toyu.utils.getToyPromotionList
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class HomeViewModel: ViewModel() ,ToyAdapter.Delegate{
+class HomeViewModel: ViewModel() ,ToyAdapter.Delegate,ToyPromotionAdapter.Delegate{
 
     private val mModel: ToyUModel = ToyUModelImpl
 
@@ -21,6 +22,7 @@ class HomeViewModel: ViewModel() ,ToyAdapter.Delegate{
     private var mToyPromotionList: LiveData<List<ToyPromotionListVO>> = mModel.getToyPromotionList()
 
     private var navigateToToyDetail: MutableLiveData<Int> = MutableLiveData()
+    private var navigateToToyPromotionDetail: MutableLiveData<Int> = MutableLiveData()
 
     fun onUiReady(){
         mModel.insertToyList(getToyList())
@@ -43,6 +45,16 @@ class HomeViewModel: ViewModel() ,ToyAdapter.Delegate{
 
     fun getNavigateToToyDetail(): LiveData<Int>{
         return navigateToToyDetail
+    }
+
+    override fun onTapToyPromotionItem(toyId: Int) {
+        GlobalScope.launch {
+            navigateToToyPromotionDetail.postValue(toyId)
+        }
+    }
+
+    fun getNavigateToyToyPromotionDetail(): LiveData<Int>{
+        return navigateToToyPromotionDetail
     }
 
 }
