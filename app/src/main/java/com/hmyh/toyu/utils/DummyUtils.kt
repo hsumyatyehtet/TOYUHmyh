@@ -85,3 +85,24 @@ fun getToyDetail(): MutableList<ToyDetailVO> {
         )
     )
 }
+
+fun getToyCartList(): MutableList<ToyCartVO> {
+    return mutableListOf(
+        ToyCartVO(
+            5, "Toy Couple", "Exclusive", R.drawable.toy_promotion_couple,
+            50, 43.90, 4.2f,
+            "Custom Anniversary Couple Bobblehead Free Shipping, Personalized Lover Statues, Personalized Couples Gifts.",
+            getColorList(),
+            OwnerVO(5, "Kaung", R.drawable.owner_kaung),
+            2
+        ),
+        ToyCartVO(
+            6, "Toy Squid Game", "Limited", R.drawable.toy_promotion_squid_game,
+            60, 56.90, 4.0f,
+            "Digitally printed BTS pillows on leather fabric. The inner filling is fiber.",
+            getColorList(),
+            OwnerVO(6, "Kahnt", R.drawable.owner_khant),
+            1
+        )
+    )
+}

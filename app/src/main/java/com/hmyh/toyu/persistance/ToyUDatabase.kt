@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.hmyh.toyu.data.vos.*
+import com.hmyh.toyu.persistance.daos.ToyCartDao
 import com.hmyh.toyu.persistance.daos.ToyDao
 import com.hmyh.toyu.persistance.daos.ToyPromotionDao
 import com.hmyh.toyu.persistance.daos.ToysDetailDao
@@ -17,7 +18,8 @@ import com.hmyh.toyu.persistance.typeconverter.ColorsListTypeConverter
         ToyPromotionListVO::class,
         ToyDetailVO::class,
         ColorsListVO::class,
-        OwnerVO::class
+        OwnerVO::class,
+        ToyCartVO::class
     ],
     version = 1, exportSchema = false
 )
@@ -27,6 +29,7 @@ abstract class ToyUDatabase : RoomDatabase() {
     abstract fun toyDao(): ToyDao
     abstract fun toyPromotionDao(): ToyPromotionDao
     abstract fun toysDetailDao(): ToysDetailDao
+    abstract fun toyCartDao(): ToyCartDao
 
     companion object {
 
