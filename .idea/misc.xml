@@ -13,6 +13,10 @@
         <entry key="..\:/Project/TOYUHmyh/app/src/main/res/drawable/bg_search.xml" value="0.119" />
         <entry key="..\:/Project/TOYUHmyh/app/src/main/res/drawable/bg_toy_detail.xml" value="0.1185" />
         <entry key="..\:/Project/TOYUHmyh/app/src/main/res/drawable/bg_toy_detail_fav.xml" value="0.1185" />
+        <entry key="..\:/Project/TOYUHmyh/app/src/main/res/drawable/circle_orange.xml" value="0.1285" />
+        <entry key="..\:/Project/TOYUHmyh/app/src/main/res/drawable/circle_pink.xml" value="0.1285" />
+        <entry key="..\:/Project/TOYUHmyh/app/src/main/res/drawable/circle_purple.xml" value="0.1285" />
+        <entry key="..\:/Project/TOYUHmyh/app/src/main/res/drawable/circle_yellow.xml" value="0.1285" />
         <entry key="..\:/Project/TOYUHmyh/app/src/main/res/drawable/fav_active.xml" value="0.1" />
         <entry key="..\:/Project/TOYUHmyh/app/src/main/res/drawable/ic_nav_cart.xml" value="0.1" />
         <entry key="..\:/Project/TOYUHmyh/app/src/main/res/drawable/ic_nav_fav.xml" value="0.1" />
@@ -26,6 +30,7 @@
         <entry key="..\:/Project/TOYUHmyh/app/src/main/res/layout/fragment_fav.xml" value="0.17255434782608695" />
         <entry key="..\:/Project/TOYUHmyh/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Project/TOYUHmyh/app/src/main/res/layout/fragment_profile.xml" value="0.17255434782608695" />
+        <entry key="..\:/Project/TOYUHmyh/app/src/main/res/layout/view_holder_in_colors.xml" value="0.19791666666666666" />
         <entry key="..\:/Project/TOYUHmyh/app/src/main/res/layout/view_holder_in_toy.xml" value="0.21" />
         <entry key="..\:/Project/TOYUHmyh/app/src/main/res/layout/view_holder_in_toy_promotion.xml" value="0.21" />
         <entry key="..\:/Project/TOYUHmyh/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.20416666666666666" />
