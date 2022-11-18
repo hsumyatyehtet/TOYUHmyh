@@ -24,7 +24,7 @@ class SplashScreenActivity: BaseActivity() {
                 } catch (e: InterruptedException) {
                 }
                 runOnUiThread {
-                    startActivity(GetStartActivity.newIntent(this@SplashScreenActivity))
+                    startActivity(MainActivity.newIntent(this@SplashScreenActivity))
                     this@SplashScreenActivity.finish()
                 }
             }
